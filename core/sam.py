@@ -1,4 +1,4 @@
-from commands.system import obtener_hora
+from core.router import ejecutar_comando
 
 
 def iniciar_sam():
@@ -19,8 +19,6 @@ def iniciar_sam():
             print("SAM finalizado.")
             break
 
-        elif comando == "hora":
-            print(obtener_hora())
+        respuesta = ejecutar_comando(comando)
 
-        else:
-            print("No entiendo ese comando.")
+        print(respuesta)
