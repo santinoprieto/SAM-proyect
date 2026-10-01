@@ -7,7 +7,8 @@ COMANDOS = {
     "subir volumen": lambda: cambiar_volumen(0.10),
     "bajar volumen": lambda: cambiar_volumen(-0.10),
     "silenciar": silenciar,
-    "desilenciar": desilenciar
+    "desilenciar": desilenciar,
+    "bloquear pc": bloquear_pc
 }
 
 

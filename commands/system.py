@@ -1,4 +1,5 @@
 from datetime import datetime
+import subprocess
 
 from pycaw.pycaw import AudioUtilities
 
@@ -52,3 +53,9 @@ def desilenciar():
     volumen.SetMute(0, None)
 
     return "Volumen activado."
+
+def bloquear_pc():
+
+    subprocess.run(["rundll32.exe", "user32.dll,LockWorkStation"])
+
+    return "PC bloqueada."
