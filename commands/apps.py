@@ -12,11 +12,16 @@ def abrir_aplicacion(nombre):
 
     aplicaciones = cargar_aplicaciones()
 
-    if nombre not in aplicaciones:
-        return f"No encontré la aplicación '{nombre}'."
+    for aplicacion in aplicaciones:
 
-    comando = aplicaciones[nombre]["command"]
+        aliases = aplicaciones[aplicacion]["aliases"]
 
-    subprocess.Popen(comando)
+        if nombre in aliases:
 
-    return f"Abriendo {nombre}."
+            comando = aplicaciones[aplicacion]["command"]
+
+            subprocess.Popen(comando)
+
+            return f"Abriendo {aplicacion}."
+
+    return f"No encontré la aplicación '{nombre}'."

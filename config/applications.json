@@ -1,5 +1,9 @@
 {
     "calculadora": {
-        "command": "calc.exe"
+        "command": "calc.exe",
+        "aliases": [
+            "calculadora",
+            "calc"
+        ]
     }
 }
