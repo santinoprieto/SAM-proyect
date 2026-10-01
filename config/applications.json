@@ -5,5 +5,21 @@
             "calculadora",
             "calc"
         ]
+    },
+    "bloc de notas": {
+        "command": "notepad.exe",
+        "aliases": [
+            "bloc de notas",
+            "notepad",
+            "bloc"
+        ]
+    },
+    "explorador": {
+        "command": "explorer.exe",
+        "aliases": [
+            "explorador",
+            "archivos",
+            "explorer"
+        ]
     }
 }
