@@ -1,8 +1,10 @@
 from commands.system import obtener_hora
+from commands.apps import abrir_calculadora
 
 
 COMANDOS = {
-    "hora": obtener_hora
+    "hora": obtener_hora,
+    "abrir calculadora": abrir_calculadora
 }
 
 
