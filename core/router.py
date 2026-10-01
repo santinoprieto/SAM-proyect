@@ -1,9 +1,13 @@
-from commands.system import obtener_hora
+from commands.system import *
 from commands.apps import abrir_aplicacion
 
 
 COMANDOS = {
-    "hora": obtener_hora
+    "hora": obtener_hora,
+    "subir volumen": lambda: cambiar_volumen(0.10),
+    "bajar volumen": lambda: cambiar_volumen(-0.10),
+    "silenciar": silenciar,
+    "desilenciar": desilenciar
 }
 
 
