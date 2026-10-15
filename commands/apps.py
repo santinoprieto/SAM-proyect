@@ -4,7 +4,12 @@ import subprocess
 
 def cargar_aplicaciones():
 
-    with open("config/applications.json", "r", encoding="utf-8") as archivo:
+    with open(
+        "config/applications.json",
+        "r",
+        encoding="utf-8"
+    ) as archivo:
+
         return json.load(archivo)
 
 

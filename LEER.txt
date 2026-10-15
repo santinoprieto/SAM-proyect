@@ -1,0 +1,21 @@
+-----------------------------COMANDOS-----------------------------
+hora
+
+subir volumen
+bajar volumen
+silenciar
+desilenciar
+
+bloquear pc
+
+apagar pc       → pide confirmación
+reiniciar pc    → pide confirmación
+suspender pc    → pide confirmación
+
+sacar captura
+
+abrir calculadora
+abrir calc
+abrir bloc
+abrir notepad
+abrir archivos
