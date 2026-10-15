@@ -1,4 +1,5 @@
 from core.security import confirmar_accion
+from commands.files import abrir_archivo
 
 from commands.system import (
     obtener_hora,
@@ -133,13 +134,19 @@ def ejecutar_comando(comando):
         aliases = COMANDOS[comando_configurado]["aliases"]
 
         if comando in aliases:
-
             return COMANDOS[comando_configurado]["funcion"]()
+
+    if comando.startswith("abrir archivo "):
+        ruta = comando[len("abrir archivo "):]
+        return abrir_archivo(ruta)
+
+    if comando.startswith("abrir carpeta "):
+        ruta = comando[len("abrir carpeta "):]
+        return abrir_archivo(ruta)
 
     partes = comando.split(" ", 1)
 
     if len(partes) == 2:
-
         accion = partes[0]
         objeto = partes[1]
 

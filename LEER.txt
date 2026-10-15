@@ -19,3 +19,4 @@ abrir calc
 abrir bloc
 abrir notepad
 abrir archivos
+abrir carpeta
