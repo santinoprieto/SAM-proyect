@@ -1,5 +1,5 @@
-from core.security import confirmar_accion
-from commands.files import abrir_archivo
+from core.security import *
+from commands.files import *
 
 from commands.system import (
     obtener_hora,
@@ -145,6 +145,18 @@ def ejecutar_comando(comando):
         return abrir_archivo(ruta)
 
     partes = comando.split(" ", 1)
+
+    if comando.startswith("buscar archivo "):
+        nombre = comando[len("buscar archivo "):]
+        return buscar_archivo(nombre)
+
+    if comando.startswith("abrir archivo "):
+        ruta = comando[len("abrir archivo "):]
+        return abrir_archivo(ruta)
+
+    if comando.startswith("abrir carpeta "):
+        ruta = comando[len("abrir carpeta "):]
+        return abrir_archivo(ruta)
 
     if len(partes) == 2:
         accion = partes[0]
