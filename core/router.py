@@ -158,6 +158,10 @@ def ejecutar_comando(comando):
         ruta = comando[len("abrir carpeta "):]
         return abrir_archivo(ruta)
 
+    if comando.startswith("crear archivo "):
+        nombre = comando[len("crear archivo "):]
+        return crear_archivo_texto(nombre)
+
     if len(partes) == 2:
         accion = partes[0]
         objeto = partes[1]
@@ -166,3 +170,9 @@ def ejecutar_comando(comando):
             return abrir_aplicacion(objeto)
 
     return "No entiendo ese comando."
+
+from commands.files import (
+    abrir_archivo,
+    buscar_archivo,
+    crear_archivo_texto
+)

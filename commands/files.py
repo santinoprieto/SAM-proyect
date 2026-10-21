@@ -78,3 +78,33 @@ def buscar_archivo(nombre):
         respuesta += "\nHay más resultados; mostrando solo los primeros 10."
 
     return respuesta
+
+
+def crear_archivo_texto(nombre):
+
+    nombre = nombre.strip().strip('"')
+
+    if not nombre:
+        return "Tenés que indicar el nombre del archivo."
+
+    if not nombre.lower().endswith(".txt"):
+        nombre += ".txt"
+
+    carpeta = Path.home() / "Documents"
+    carpeta.mkdir(exist_ok=True)
+
+    ruta = carpeta / nombre
+
+    if ruta.exists():
+        return f"Ya existe un archivo llamado '{nombre}'."
+
+    try:
+        contenido = input("Escribí el contenido del archivo: ")
+
+        with open(ruta, "w", encoding="utf-8") as archivo:
+            archivo.write(contenido)
+
+        return f"Archivo creado correctamente: {ruta}"
+
+    except OSError as error:
+        return f"No se pudo crear el archivo: {error}"
